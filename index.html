@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Openai官网ChatGpt Plus 24小时自助代充服务</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 头部区域 */
+        .header {
+            text-align: center;
+            padding: 60px 0 50px;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.4);
+            letter-spacing: 2px;
+        }
+
+        .header .subtitle {
+            color: rgba(255,255,255,0.95);
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+        }
+
+        /* 主要内容区域 */
+        .main-content {
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            overflow: hidden;
+            margin-bottom: 50px;
+        }
+
+        /* 产品展示区 */
+        .product-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+            50% { transform: translate(-50%, -50%) rotate(180deg); }
+        }
+
+        .product-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d, #6bcf7f, #4d9de0, #e15759, #ff9ff3);
+            background-size: 400% 400%;
+            animation: gradientShift 3s ease infinite, pulse 2s ease-in-out infinite alternate;
+            padding: 18px 35px;
+            border-radius: 35px;
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 25px;
+            backdrop-filter: blur(15px);
+            border: 3px solid rgba(255,255,255,0.6);
+            position: relative;
+            z-index: 2;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 30px rgba(255,255,255,0.3);
+            transform: scale(1.1);
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes pulse {
+            0% { 
+                transform: scale(1.1);
+                box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 30px rgba(255,255,255,0.3);
+            }
+            100% { 
+                transform: scale(1.15);
+                box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 40px rgba(255,255,255,0.5);
+            }
+        }
+
+        .product-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+        }
+
+        .product-price {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 2;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .product-period {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+            font-weight: 500;
+        }
+
+        /* 保障信息 */
+        .guarantee-section {
+            padding: 50px 40px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .guarantee-title {
+            font-size: 1.8rem;
+            color: #1e293b;
+            margin-bottom: 35px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .guarantee-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .guarantee-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 25px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .guarantee-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .guarantee-icon {
+            font-size: 2rem;
+            margin-right: 18px;
+            margin-top: 3px;
+        }
+
+        .guarantee-text {
+            flex: 1;
+        }
+
+        .guarantee-text h4 {
+            color: #1e293b;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .guarantee-text p {
+            color: #64748b;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* 购买选项 */
+        .purchase-section {
+            padding: 50px 40px;
+            background: white;
+        }
+
+        .purchase-title {
+            font-size: 2rem;
+            color: #1e293b;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .purchase-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 35px;
+        }
+
+        .purchase-btn {
+            display: block;
+            padding: 35px 30px;
+            text-decoration: none;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid transparent;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .purchase-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .purchase-btn:hover::before {
+            left: 100%;
+        }
+
+        .purchase-btn.primary {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+        }
+
+        .purchase-btn.secondary {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+        }
+
+        .purchase-btn:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .purchase-btn h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .purchase-btn p {
+            opacity: 0.9;
+            font-size: 1rem;
+            position: relative;
+            z-index: 2;
+            font-weight: 500;
+        }
+
+        /* 视频教程区域 */
+        .video-section {
+            padding: 50px 40px;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            text-align: center;
+        }
+
+        .video-title {
+            font-size: 1.8rem;
+            color: #92400e;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        .video-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+            padding: 20px 40px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .video-btn:hover::before {
+            left: 100%;
+        }
+
+        .video-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(245, 158, 11, 0.4);
+        }
+
+        .video-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        /* 底部特色 */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.95);
+            padding: 35px 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            backdrop-filter: blur(15px);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .feature-icon {
+            font-size: 2.8rem;
+            margin-bottom: 18px;
+            display: block;
+        }
+
+        .feature-card h4 {
+            color: #1e293b;
+            font-weight: 700;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: #64748b;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .header .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .product-section {
+                padding: 45px 25px;
+            }
+
+            .product-title {
+                font-size: 2.2rem;
+            }
+
+            .product-price {
+                font-size: 3.5rem;
+            }
+
+            .product-badge {
+                font-size: 1.4rem;
+                padding: 15px 25px;
+            }
+
+            .purchase-options {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .guarantee-section,
+            .purchase-section {
+                padding: 35px 25px;
+            }
+
+            .guarantee-list {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+            <h1>🚀 ChatGpt Plus 代充</h1>
+            <div class="subtitle">专业 • 安全 • 保障</div>
+        </header>
+
+        <!-- 主要内容 -->
+        <div class="main-content">
+            <!-- 产品展示 -->
+            <div class="product-section">
+                <div class="product-badge">✨ 靠谱给力</div>
+                <h2 class="product-title">官网ChatGpt Plus 会员</h2>
+                <div class="product-price">仅需¥140一个月</div>
+                <div class="product-period">客服V：lisuwen116【添加备注：gpt代充】</div>
+            </div>
+
+            <!-- 服务保障 -->
+            <div class="guarantee-section">
+                <h3 class="guarantee-title">🛡️ 服务保障</h3>
+                <div class="guarantee-list">
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon">🔒</div>
+                        <div class="guarantee-text">
+                            <h4>正规渠道</h4>
+                            <p>正规渠道代充，账户安全有保障</p>
+                        </div>
+                    </div>
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon">💰</div>
+                        <div class="guarantee-text">
+                            <h4>封号退费</h4>
+                            <p>如遇封号情况，按剩余天数比例退费</p>
+                        </div>
+                    </div>
+                    <div class="guarantee-item">
+                        <div class="guarantee-icon">⚡</div>
+                        <div class="guarantee-text">
+                            <h4>快速到账</h4>
+                            <p>24小时内自助充值，秒开Plus</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 购买选项 -->
+            <div class="purchase-section">
+                <h3 class="purchase-title">💳 选择购买方式</h3>
+                <div class="purchase-options">
+                    <a href="https://yk.i6ls.com//links/687593ED" class="purchase-btn secondary" target="_blank">
+                        <h3>🎫 卡密自助购买</h3>
+                        <p>即买即用，自动发货</p>
+                    </a>
+                    <a href="https://gptplus.biz/" class="purchase-btn primary" target="_blank">
+                        <h3>🤖 24小时代充系统</h3>
+                        <p>先买卡密，再进代充</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 操作流程视频 -->
+            <div class="video-section">
+                <h3 class="video-title">📹 操作流程视频教程</h3>
+                <a href="http://cloud.video.taobao.com/play/u/null/p/1/e/6/t/1/514196921671.mp4" class="video-btn" target="_blank">
+                    <span class="video-icon">▶️</span>
+                    观看详细操作流程
+                </a>
+            </div>
+        </div>
+
+        <!-- 底部特色 -->
+        <div class="features">
+            <div class="feature-card">
+                <span class="feature-icon">⭐</span>
+                <h4>信誉保证</h4>
+                <p>多年经验，值得信赖</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🎯</span>
+                <h4>专业服务</h4>
+                <p>专注Gpt Plus代充服务</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">💎</span>
+                <h4>品质保障</h4>
+                <p>高质量服务，用户好评</p>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
