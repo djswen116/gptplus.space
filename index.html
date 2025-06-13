@@ -12,10 +12,11 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #007aff 0%, #0051d5 100%);
             min-height: 100vh;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
@@ -32,32 +33,32 @@
 
         .header h1 {
             color: white;
-            font-size: 3.5rem;
-            font-weight: 900;
+            font-size: 3.2rem;
+            font-weight: 700;
             margin-bottom: 20px;
-            text-shadow: 0 4px 30px rgba(0,0,0,0.4);
-            letter-spacing: 2px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+            letter-spacing: -0.5px;
         }
 
         .header .subtitle {
             color: rgba(255,255,255,0.95);
-            font-size: 1.4rem;
-            font-weight: 600;
-            letter-spacing: 3px;
+            font-size: 1.3rem;
+            font-weight: 500;
+            letter-spacing: 2px;
         }
 
         /* 主要内容区域 */
         .main-content {
             background: white;
-            border-radius: 28px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
             overflow: hidden;
             margin-bottom: 50px;
         }
 
         /* 产品展示区 */
         .product-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #007aff 0%, #0051d5 100%);
             color: white;
             padding: 60px 40px;
             text-align: center;
@@ -73,7 +74,7 @@
             width: 200%;
             height: 200%;
             background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: float 6s ease-in-out infinite;
+            animation: float 8s ease-in-out infinite;
         }
 
         @keyframes float {
@@ -83,129 +84,49 @@
 
         .product-badge {
             display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #ffd93d, #6bcf7f, #4d9de0, #e15759, #ff9ff3);
-            background-size: 400% 400%;
-            animation: gradientShift 3s ease infinite, pulse 2s ease-in-out infinite alternate;
-            padding: 18px 35px;
-            border-radius: 35px;
-            font-size: 1.8rem;
-            font-weight: 900;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
             margin-bottom: 25px;
-            backdrop-filter: blur(15px);
-            border: 3px solid rgba(255,255,255,0.6);
             position: relative;
             z-index: 2;
-            letter-spacing: 2px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 30px rgba(255,255,255,0.3);
-            transform: scale(1.1);
-        }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        @keyframes pulse {
-            0% { 
-                transform: scale(1.1);
-                box-shadow: 0 8px 32px rgba(0,0,0,0.3), 0 0 30px rgba(255,255,255,0.3);
-            }
-            100% { 
-                transform: scale(1.15);
-                box-shadow: 0 12px 40px rgba(0,0,0,0.4), 0 0 40px rgba(255,255,255,0.5);
-            }
+            letter-spacing: 1px;
         }
 
         .product-title {
-            font-size: 2.8rem;
-            font-weight: 800;
+            font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 20px;
             position: relative;
             z-index: 2;
-            text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            letter-spacing: -1px;
         }
 
         .product-price {
-            font-size: 4.5rem;
-            font-weight: 900;
+            font-size: 4rem;
+            font-weight: 800;
             margin-bottom: 15px;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 15px rgba(0,0,0,0.3);
             position: relative;
             z-index: 2;
-            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            background: linear-gradient(45deg, #ffffff, #e6f2ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .product-period {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             opacity: 0.95;
             margin-bottom: 30px;
             position: relative;
             z-index: 2;
             font-weight: 500;
-        }
-
-        /* 保障信息 */
-        .guarantee-section {
-            padding: 50px 40px;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        }
-
-        .guarantee-title {
-            font-size: 1.8rem;
-            color: #1e293b;
-            margin-bottom: 35px;
-            text-align: center;
-            font-weight: 700;
-        }
-
-        .guarantee-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-
-        .guarantee-item {
-            display: flex;
-            align-items: flex-start;
-            padding: 25px;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .guarantee-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-        }
-
-        .guarantee-icon {
-            font-size: 2rem;
-            margin-right: 18px;
-            margin-top: 3px;
-        }
-
-        .guarantee-text {
-            flex: 1;
-        }
-
-        .guarantee-text h4 {
-            color: #1e293b;
-            font-weight: 700;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-        }
-
-        .guarantee-text p {
-            color: #64748b;
-            font-size: 1rem;
-            line-height: 1.5;
         }
 
         /* 购买选项 */
@@ -215,31 +136,32 @@
         }
 
         .purchase-title {
-            font-size: 2rem;
-            color: #1e293b;
+            font-size: 1.8rem;
+            color: #1d1d1f;
             text-align: center;
             margin-bottom: 40px;
             font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         .purchase-options {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 25px;
             margin-bottom: 35px;
         }
 
         .purchase-btn {
             display: block;
-            padding: 35px 30px;
+            padding: 30px 25px;
             text-decoration: none;
-            border-radius: 20px;
+            border-radius: 16px;
             text-align: center;
-            transition: all 0.4s ease;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             position: relative;
             overflow: hidden;
             border: 2px solid transparent;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
         }
 
         .purchase-btn::before {
@@ -258,26 +180,27 @@
         }
 
         .purchase-btn.primary {
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            background: linear-gradient(135deg, #007aff 0%, #0051d5 100%);
             color: white;
         }
 
         .purchase-btn.secondary {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            background: linear-gradient(135deg, #4da6ff 0%, #007aff 100%);
             color: white;
         }
 
         .purchase-btn:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
 
         .purchase-btn h3 {
-            font-size: 1.4rem;
-            font-weight: 800;
+            font-size: 1.3rem;
+            font-weight: 700;
             margin-bottom: 10px;
             position: relative;
             z-index: 2;
+            letter-spacing: -0.3px;
         }
 
         .purchase-btn p {
@@ -288,33 +211,98 @@
             font-weight: 500;
         }
 
+        /* 保障信息 */
+        .guarantee-section {
+            padding: 50px 40px;
+            background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
+        }
+
+        .guarantee-title {
+            font-size: 1.8rem;
+            color: #1e293b;
+            margin-bottom: 35px;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .guarantee-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .guarantee-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 25px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,122,255,0.08);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(0,122,255,0.1);
+        }
+
+        .guarantee-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,122,255,0.15);
+            border-color: #007aff;
+        }
+
+        .guarantee-icon {
+            font-size: 1.8rem;
+            margin-right: 18px;
+            margin-top: 3px;
+        }
+
+        .guarantee-text {
+            flex: 1;
+        }
+
+        .guarantee-text h4 {
+            color: #1e293b;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            letter-spacing: -0.3px;
+        }
+
+        .guarantee-text p {
+            color: #64748b;
+            font-size: 1rem;
+            line-height: 1.5;
+            font-weight: 400;
+        }
+
         /* 视频教程区域 */
         .video-section {
             padding: 50px 40px;
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            background: linear-gradient(135deg, #cce7ff 0%, #99d6ff 100%);
             text-align: center;
         }
 
         .video-title {
             font-size: 1.8rem;
-            color: #92400e;
+            color: #0051d5;
             margin-bottom: 25px;
             font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         .video-btn {
             display: inline-block;
-            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            background: linear-gradient(135deg, #007aff 0%, #0051d5 100%);
             color: white;
-            padding: 20px 40px;
+            padding: 18px 35px;
             border-radius: 25px;
             text-decoration: none;
-            font-size: 1.3rem;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 8px 25px rgba(0,122,255,0.3);
             position: relative;
             overflow: hidden;
+            letter-spacing: -0.3px;
         }
 
         .video-btn::before {
@@ -333,12 +321,13 @@
         }
 
         .video-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(245, 158, 11, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,122,255,0.4);
+            background: linear-gradient(135deg, #0051d5 0%, #003d99 100%);
         }
 
         .video-icon {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-right: 10px;
         }
 
@@ -352,21 +341,22 @@
         .feature-card {
             background: rgba(255,255,255,0.95);
             padding: 35px 25px;
-            border-radius: 20px;
+            border-radius: 18px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            box-shadow: 0 12px 30px rgba(0,122,255,0.15);
             backdrop-filter: blur(15px);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(0,122,255,0.2);
         }
 
         .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,122,255,0.2);
+            border-color: #007aff;
         }
 
         .feature-icon {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             margin-bottom: 18px;
             display: block;
         }
@@ -376,12 +366,14 @@
             font-weight: 700;
             margin-bottom: 10px;
             font-size: 1.2rem;
+            letter-spacing: -0.3px;
         }
 
         .feature-card p {
             color: #64748b;
             font-size: 1rem;
             line-height: 1.5;
+            font-weight: 400;
         }
 
         /* 移动端优化 */
@@ -396,7 +388,7 @@
 
             .header h1 {
                 font-size: 1.8rem;
-                letter-spacing: 1px;
+                letter-spacing: -0.3px;
                 margin-bottom: 15px;
             }
 
@@ -415,20 +407,19 @@
             }
 
             .product-badge {
-                font-size: 1rem;
-                padding: 12px 20px;
+                font-size: 0.9rem;
+                padding: 10px 18px;
                 margin-bottom: 20px;
-                letter-spacing: 1px;
-                transform: scale(1);
+                letter-spacing: 0.5px;
             }
 
             .product-title {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
                 margin-bottom: 15px;
             }
 
             .product-price {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
                 margin-bottom: 10px;
             }
 
@@ -438,11 +429,15 @@
                 line-height: 1.4;
             }
 
-            .guarantee-section {
+            .guarantee-section,
+            .purchase-section,
+            .video-section {
                 padding: 30px 20px;
             }
 
-            .guarantee-title {
+            .guarantee-title,
+            .purchase-title,
+            .video-title {
                 font-size: 1.4rem;
                 margin-bottom: 25px;
             }
@@ -458,7 +453,7 @@
             }
 
             .guarantee-icon {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
                 margin-right: 12px;
             }
 
@@ -471,15 +466,6 @@
                 font-size: 0.9rem;
             }
 
-            .purchase-section {
-                padding: 30px 20px;
-            }
-
-            .purchase-title {
-                font-size: 1.4rem;
-                margin-bottom: 25px;
-            }
-
             .purchase-options {
                 grid-template-columns: 1fr;
                 gap: 15px;
@@ -487,12 +473,8 @@
             }
 
             .purchase-btn {
-                padding: 25px 20px;
-                border-radius: 15px;
-                min-height: 110px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+                padding: 22px 18px;
+                border-radius: 14px;
             }
 
             .purchase-btn h3 {
@@ -504,26 +486,14 @@
                 font-size: 0.9rem;
             }
 
-            .video-section {
-                padding: 30px 20px;
-            }
-
-            .video-title {
-                font-size: 1.3rem;
-                margin-bottom: 20px;
-            }
-
             .video-btn {
-                padding: 15px 25px;
+                padding: 14px 25px;
                 font-size: 1rem;
                 border-radius: 20px;
-                display: block;
-                width: 100%;
-                box-sizing: border-box;
             }
 
             .video-icon {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
                 margin-right: 8px;
             }
 
@@ -538,7 +508,7 @@
             }
 
             .feature-icon {
-                font-size: 2.2rem;
+                font-size: 2rem;
                 margin-bottom: 12px;
             }
 
@@ -569,7 +539,7 @@
 
             .header .subtitle {
                 font-size: 1.2rem;
-                letter-spacing: 2px;
+                letter-spacing: 1.5px;
             }
 
             .product-section {
@@ -577,20 +547,20 @@
             }
 
             .product-badge {
-                font-size: 1.3rem;
-                padding: 15px 25px;
+                font-size: 1rem;
+                padding: 11px 20px;
             }
 
             .product-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .product-price {
-                font-size: 3rem;
+                font-size: 2.8rem;
             }
 
             .product-period {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
             .guarantee-section,
@@ -600,12 +570,9 @@
             }
 
             .guarantee-title,
-            .purchase-title {
-                font-size: 1.6rem;
-            }
-
+            .purchase-title,
             .video-title {
-                font-size: 1.5rem;
+                font-size: 1.6rem;
             }
 
             .purchase-options {
@@ -673,7 +640,7 @@
                         <h3>🎫 卡密自助购买</h3>
                         <p>即买即用，自动发货</p>
                     </a>
-                    <a href="https://www.itboshi.com/recharge" class="purchase-btn primary" target="_blank">
+                    <a href="https://gptplus.biz/" class="purchase-btn primary" target="_blank">
                         <h3>🤖 24小时代充系统</h3>
                         <p>先买卡密，再进代充</p>
                     </a>
