@@ -108,16 +108,35 @@
         }
 
         .product-price {
-            font-size: 4rem;
-            font-weight: 800;
             margin-bottom: 15px;
-            text-shadow: 0 2px 15px rgba(0,0,0,0.3);
             position: relative;
             z-index: 2;
+        }
+
+        .price-prefix {
+            font-size: 1.5rem;
+            font-weight: 500;
+            opacity: 0.9;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .price-amount {
+            font-size: 4.5rem;
+            font-weight: 800;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.3);
             background: linear-gradient(45deg, #ffffff, #e6f2ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            line-height: 1;
+        }
+
+        .price-suffix {
+            font-size: 1.2rem;
+            font-weight: 500;
+            opacity: 0.9;
+            margin-top: 5px;
         }
 
         .product-period {
@@ -418,9 +437,13 @@
                 margin-bottom: 15px;
             }
 
-            .product-price {
-                font-size: 2.2rem;
-                margin-bottom: 10px;
+            .price-amount {
+                font-size: 2.8rem;
+            }
+
+            .price-prefix,
+            .price-suffix {
+                font-size: 1rem;
             }
 
             .product-period {
@@ -555,8 +578,13 @@
                 font-size: 1.8rem;
             }
 
-            .product-price {
-                font-size: 2.8rem;
+            .price-amount {
+                font-size: 3.5rem;
+            }
+
+            .price-prefix,
+            .price-suffix {
+                font-size: 1.1rem;
             }
 
             .product-period {
@@ -628,7 +656,11 @@
             <div class="product-section">
                 <div class="product-badge">✨ 靠谱给力</div>
                 <h2 class="product-title">官网ChatGpt Plus 会员</h2>
-                <div class="product-price">仅需¥140一个月</div>
+                <div class="product-price">
+                    <span class="price-prefix">仅需</span>
+                    <div class="price-amount">¥140</div>
+                    <span class="price-suffix">一个月</span>
+                </div>
                 <div class="product-period">客服V：lisuwen116【添加备注：gpt代充】</div>
             </div>
 
@@ -669,7 +701,7 @@
                         <div class="guarantee-icon">⚡</div>
                         <div class="guarantee-text">
                             <h4>快速到账</h4>
-                            <p>24小时内自助充值，秒开Plus</p>
+                            <p>24小时自助充值，5分钟内开好</p>
                         </div>
                     </div>
                 </div>
